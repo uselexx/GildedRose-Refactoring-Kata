@@ -103,7 +103,7 @@ public class BackstagePassesTAFKA(Item item) : GildedRoseItem(item)
 
 public class BackstagePassesGALA(Item item) : GildedRoseItem(item)
 {
-    public override void UpdateQuality() // todo
+    public override void UpdateQuality()
     {
         DecreaseSellIn();
 
