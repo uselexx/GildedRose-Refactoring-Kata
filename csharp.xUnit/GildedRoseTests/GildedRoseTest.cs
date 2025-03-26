@@ -227,4 +227,15 @@ public class GildedRoseTest
         Assert.Equal(9, items[0].SellIn);
     }
 
+    [Fact]
+    public void Observer_PriorityChangeToHigh()
+    {
+        IList<Item> items = new List<Item> { new Item { Name = "Normal Item", SellIn = 3, Quality = 0 } };
+        GildedRose app = new GildedRose(items);
+        Assert.Empty(app.HighPriorityItems);
+        app.UpdateQuality();
+        Assert.Single(app.HighPriorityItems);
+        Assert.Equal(0, items[0].Quality);
+        Assert.Equal(2, items[0].SellIn);
+    }
 }
