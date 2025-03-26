@@ -76,7 +76,7 @@ public class Sulfuras(Item item) : GildedRoseItem(item)
     }
 }
 
-public class BackstagePasses(Item item) : GildedRoseItem(item)
+public class BackstagePassesTAFKA(Item item) : GildedRoseItem(item)
 {
     public override void UpdateQuality()
     {
@@ -97,6 +97,31 @@ public class BackstagePasses(Item item) : GildedRoseItem(item)
         else
         {
             IncreaseQuality();
+        }
+    }
+}
+
+public class BackstagePassesGALA(Item item) : GildedRoseItem(item)
+{
+    public override void UpdateQuality() // todo
+    {
+        DecreaseSellIn();
+
+        if (Item.SellIn < 0)
+        {
+            Item.Quality = 0;
+        }
+        else if (Item.SellIn < 5)
+        {
+            IncreaseQuality(4);
+        }
+        else if (Item.SellIn < 10)
+        {
+            IncreaseQuality(3);
+        }
+        else
+        {
+            IncreaseQuality(2);
         }
     }
 }
