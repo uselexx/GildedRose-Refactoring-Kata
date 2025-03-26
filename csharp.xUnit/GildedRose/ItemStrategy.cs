@@ -14,10 +14,10 @@ public static class ItemUpdateStrategyFactory
     {
         return item.Name switch
         {
-            "Aged Brie" => new AgedBrieStrategy(),
-            "Sulfuras, Hand of Ragnaros" => new SulfurasStrategy(),
-            "Backstage passes to a TAFKAL80ETC concert" => new BackstagePassesStrategy(),
-            "Conjured" => new ConjuredItemStrategy(),
+            ItemConstants.AGED_BRIE => new AgedBrieStrategy(),
+            ItemConstants.SULFURAS => new SulfurasStrategy(),
+            ItemConstants.BACKSTAGE_TAFKA => new BackstagePassesStrategy(),
+            ItemConstants.CONJURED => new ConjuredItemStrategy(),
             _ => new NormalItemStrategy(),
         };
     }

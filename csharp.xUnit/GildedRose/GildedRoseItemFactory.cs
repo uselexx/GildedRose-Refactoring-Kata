@@ -6,11 +6,11 @@ public static class GildedRoseItemFactory
     {
         return item.Name switch
         {
-            "Aged Brie" => new AgedBrie(item),
-            "Sulfuras, Hand of Ragnaros" => new Sulfuras(item),
-            "Backstage passes to a TAFKAL80ETC concert" => new BackstagePassesTAFKA(item),
-            "Backstage passes to a GALA concert" => new BackstagePassesGALA(item),
-            "Conjured" => new ConjuredItem(item),
+            ItemConstants.AGED_BRIE => new AgedBrie(item),
+            ItemConstants.SULFURAS => new Sulfuras(item),
+            ItemConstants.BACKSTAGE_TAFKA => new BackstagePassesTAFKA(item),
+            ItemConstants.BACKSTAGE_GALA => new BackstagePassesGALA(item),
+            ItemConstants.CONJURED => new ConjuredItem(item),
             _ => new NormalItem(item),
         };
     }
