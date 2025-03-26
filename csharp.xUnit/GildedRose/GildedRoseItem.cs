@@ -28,10 +28,11 @@ public abstract class GildedRoseItem
         if (Item.Quality < 50)
         {
             Item.Quality += amount;
-        }
-        if (Item.Quality > 50)
-        {
-            Item.Quality = 50;
+
+            if (Item.Quality > 50)
+            {
+                Item.Quality = 50;
+            }
         }
     }
 }
