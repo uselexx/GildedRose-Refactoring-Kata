@@ -1,10 +1,12 @@
-﻿namespace GildedRoseKata;
+﻿using System;
+
+namespace GildedRoseKata;
 
 
 // LEVEL 3 Abstract Class
 public abstract class GildedRoseItem
 {
-    protected Item Item;
+    public Item Item;
 
     public GildedRoseItem(Item item)
     {
@@ -17,22 +19,12 @@ public abstract class GildedRoseItem
 
     protected void DecreaseQuality(int amount = 1)
     {
-        if (Item.Quality > 0)
-        {
-            Item.Quality -= amount;
-        }
+        if (Item.Quality > 0) Item.Quality = Math.Max(0, Item.Quality - amount);
     }
 
     protected void IncreaseQuality(int amount = 1)
     {
-        if (Item.Quality < 50)
-        {
-            Item.Quality += amount;
-        }
-        if (Item.Quality > 50)
-        {
-            Item.Quality = 50;
-        }
+        if (Item.Quality < 50) Item.Quality = Math.Min(50, Item.Quality + amount);
     }
 }
 
@@ -126,17 +118,15 @@ public class BackstagePassesGALA(Item item) : GildedRoseItem(item)
     }
 }
 
-public class ConjuredItem(Item item) : GildedRoseItem(item)
+public class ConjuredItemDecorator(GildedRoseItem baseItem) : GildedRoseItem(baseItem.Item)
 {
+
     public override void UpdateQuality()
     {
-        DecreaseSellIn();
+        int initialQuality = Item.Quality;
+        baseItem.UpdateQuality();
+        int qualityDifference = initialQuality - Item.Quality;
 
-        DecreaseQuality(2);
-
-        if (Item.SellIn < 0)
-        {
-            DecreaseQuality(2);
-        }
+        DecreaseQuality(qualityDifference);
     }
 }
