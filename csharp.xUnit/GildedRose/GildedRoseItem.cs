@@ -2,7 +2,6 @@
 
 namespace GildedRoseKata;
 
-
 // LEVEL 3 Abstract Class
 public abstract class GildedRoseItem
 {
@@ -24,10 +23,10 @@ public abstract class GildedRoseItem
 
     protected void IncreaseQuality(int amount = 1)
     {
+
         if (Item.Quality < 50) Item.Quality = Math.Min(50, Item.Quality + amount);
     }
 }
-
 
 public class NormalItem(Item item) : GildedRoseItem(item)
 {
