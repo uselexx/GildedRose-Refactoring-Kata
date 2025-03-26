@@ -1,6 +1,5 @@
 ﻿namespace GildedRoseKata;
 
-
 // LEVEL 3 Abstract Class
 public abstract class GildedRoseItem
 {
@@ -36,7 +35,6 @@ public abstract class GildedRoseItem
         }
     }
 }
-
 
 public class NormalItem(Item item) : GildedRoseItem(item)
 {
