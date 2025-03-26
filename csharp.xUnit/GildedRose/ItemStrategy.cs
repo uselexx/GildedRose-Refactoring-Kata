@@ -1,5 +1,8 @@
 ﻿namespace GildedRoseKata;
 
+
+// LEVEL 2 Strategy Pattern
+
 public interface IItemUpdateStrategy
 {
     void Update(Item item);
