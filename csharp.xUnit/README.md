@@ -1,4 +1,6 @@
 # Gilded Rose
+Team: Breakout Room 3
+Members: Alexander Wedenik & Bilaver Matilda
 
 ## Design Decisions
 
