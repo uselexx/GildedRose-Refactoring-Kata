@@ -22,7 +22,7 @@ The Gilded Rose application is designed to manage the inventory of a store. The 
 
 3. **Abstract Base Class**: An abstract base class is used to define the common behavior of all items. This allows for code reuse and ensures that all item types adhere to the same interface.
 
-4.	**Observer Pattern**: The observer pattern is used to notify the `GildedRoseItemObserv	er` when the item sellIn gets lower than 3. This allows for timely actions to be taken when an item is about to expire.
+4.	**Observer Pattern**: The observer pattern is used to notify the `GildedRoseItemObserver` when the item sellIn gets lower than 3. This allows for timely actions to be taken when an item is about to expire.
 
 ## Complexities
 
